@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Student Grade Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>🎓 Student Grade Calculator</h1>
+
+    <div class="controls">
+      <button onclick="addSubject()">➕ Add Subject</button>
+      <select id="gradeScale" onchange="updateGrades(); saveData();">
+        <option value="10">10-point (India)</option>
+        <option value="4">4-point (USA)</option>
+        <option value="100">Percentage</option>
+      </select>
+      <button onclick="calculateGPA()">🎯 Calculate GPA</button>
+    </div>
+
+    <table id="gradeTable">
+      <thead>
+        <tr>
+          <th>Subject</th>
+          <th>Marks</th>
+          <th>Credits</th>
+          <th>Grade</th>
+          <th>Grade Point</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="subjectList"></tbody>
+    </table>
+
+    <div id="result"></div>
+    <div class="actions">
+      <button onclick="window.print()">🖨️ Print</button>
+      <button onclick="resetForm()">🔄 Reset</button>
+    </div>
+
+    <canvas id="barChart" height="150"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
